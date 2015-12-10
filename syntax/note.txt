@@ -1,0 +1,15 @@
+1. if - else
+def abs(x : Int) = if (x>=0) x else -x
+
+2. when defined a val, do calculation when you assign the value
+def loop:Boolean = loop
+THIS IS OK => def x = loop  -> build another reference to this function
+THIS IS NOT OK => val x = loop  -> will value loop when assign
+
+3. call by name vs call by value
+#call by value will do calculation when you assign the value
+CBN: def xx(x: Boolean, y: => Boolean)
+CBY: def xx(x: Boolean, y: Boolean)
+
+4. 
+
