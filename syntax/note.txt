@@ -79,7 +79,31 @@ def factorial(n : Int): Int = {
   loop(1, n)
 }
 
+9. First-Class Values
+functional languages treat functions as first-class values
+functions that talk other functions as parameters or that retur functions as results are called higher order functions.
 
+def cube(x: Int) : Int = x * x * x
+def sumCubes(a: Int, b: Int): Int = 
+  if ( a > b ) 0 else cube(a) + sumCubes(a + 1, b)
+
+Int => Int, is the function way of define
+
+Anonymous Function: syntactic sugar!
+(x: Int) => x * x * x
+(x1 : T1, ... , xn : Tn) => E
+is the same as : def f(x1 : T1, ..., xn : Tn) = E; f
+
+example:
+a linear recursion to this tail-recursion:
+def sum(f: Int => Int)(a: Int, b: Int): Int = {
+  def loop(a: Int, acc: Int): Int = {
+    if( a > b) acc
+    else loop(a + 1, f(a) + acc)
+  }
+  loop(a, 0)
+}
+sum(x=> x * x, 3, 5)    ... 15
 
 
 
